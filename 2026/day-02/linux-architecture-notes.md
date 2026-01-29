@@ -26,6 +26,9 @@ User space becomes available (login shell / GUI)
 
 # Explain process states (running, sleeping, zombie, etc.)
 - A process state describes what a process is doing right now—running on the CPU, waiting for something, stopped, or finished but not cleaned up yet.
+
 Running - The process is currently executing on the CPU or ready to run (in the run queue).
+
 Sleeping- The process is waiting for an event (I/O, timer, signal).
+
 Zombie - The process has finished execution, but its parent hasn’t collected its exit status yet.
