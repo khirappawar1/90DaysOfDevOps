@@ -25,4 +25,4 @@ $head -n 3 notes.txt                   - Show last 3 lines of file.
 
 $echo "using tee command"|tee note.txt - Using tee commad to save and at the same time. 
 
-(image-2.png)
+![alt text](image-3.png)
