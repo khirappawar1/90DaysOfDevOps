@@ -42,13 +42,15 @@ Pick one target service/host (e.g., `google.com`, your lab server, or a local se
 1) Identify one listening port from `ss -tulpn` (e.g., SSH on 22 or a local web app).  
 2) From the same machine, test it: `nc -zv localhost <port>` (or `curl -I http://localhost:<port>`).  
 3) Write one line: is it reachable? If not, what’s the next check? (e.g., service status, firewall).
-
+![alt text](image-7.png)
+**Connection to localhost (127.0.0.1) 22 port [tcp/ssh] succeeded!
 ---
 
 ## Reflection (add to your markdown)
 - Which command gives you the fastest signal when something is broken?
 - What layer (OSI/TCP-IP) would you inspect next if DNS fails? If HTTP 500 shows up?
 - Two follow-up checks you’d run in a real incident.
+
 
 ---
 
