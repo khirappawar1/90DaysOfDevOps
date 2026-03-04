@@ -62,4 +62,8 @@ What it does: Displays detailed information about a specific commit.
 Example:
 
 git show <commit-id>
-```
+
+git push origin master = To push to the origin 
+If getting error while pushing to the remote repo the do;
+git remote add origin https://github.com/<your-username>/devops-git-practice.git =  Connect Local Repo to GitHub Remote
+git remote -v = You should see origin listed
