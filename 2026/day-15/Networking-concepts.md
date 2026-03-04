@@ -72,8 +72,8 @@ he private IPv4 ranges (as defined by RFC 1918) are:
 These IP addresses are used inside private networks (like home networks, office networks, AWS VPC, etc.) and are not routable on the public internet.
 ```
 4. Run: `ip addr show` — identify which of your IPs are private
-```bash
 ![alt text](image.png)
+```bash
 IP - 172.31.42.170/20
 ```
 
