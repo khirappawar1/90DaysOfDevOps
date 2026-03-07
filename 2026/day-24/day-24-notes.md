@@ -91,6 +91,7 @@ You know how to branch and push to GitHub. Now it's time to learn how branches c
 8. Answer in your notes:
    - What is the difference between `git stash pop` and `git stash apply`?
    - When would you use stash in a real-world workflow?
+     
      Ans: Difference between git stash pop and git stash apply:
          git stash pop applies the changes and deletes that stash entry.
         git stash apply applies the changes but keeps the stash for later use.
@@ -109,4 +110,5 @@ You know how to branch and push to GitHub. Now it's time to learn how branches c
 
    Ans: To selectively apply bug fixes or features from one branch to another without merging the entire branch.For example, applying a hotfix commit from main to a release branch.
    - What can go wrong with cherry-picking?
+   
    Ans: It can cause conflicts if the code context differs between branches.Creates duplicate commits with different hashes, which can complicate history and cause confusion during later merges or rebases.
