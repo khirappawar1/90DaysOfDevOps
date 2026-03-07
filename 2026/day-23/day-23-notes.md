@@ -138,12 +138,15 @@ git pull downloads the changes and automatically merges them into your current b
 2. **Fork** the same repository on GitHub, then clone your fork
 3. Answer in your notes:
    - What is the difference between clone and fork?
+    
     Ans: Clone: copies a repository to your local machine.
          Fork: creates your own copy of someone else's repository on GitHub.
    - When would you clone vs fork?
+    
      Ans: Clone when you want a local copy of a repo you control.
           Fork when you want to contribute to someone else's project.
    - After forking, how do you keep your fork in sync with the original repo?
+    
      Ans: git remote add upstream https://github.com/\.../repo.git
           git fetch upstream
           git merge upstream/main
