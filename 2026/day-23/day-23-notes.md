@@ -1,4 +1,6 @@
+```bash
 1.What is a branch in Git?
+
 Ans: A branch in Git is a separate line of development.
 
 Think of it like a parallel workspace where you can work on new features or fixes without affecting the main codebase.
@@ -22,6 +24,7 @@ main continues stable development
 feature-x is where new work happens
 
 2.Why do we use branches instead of committing everything to main?
+
 Ans:Branches help keep the project safe, organized, and collaborative.
 
 Reasons:
@@ -64,6 +67,7 @@ You can try new ideas without risking the main project.
 If it fails → just delete the branch.
 
 3.What is HEAD in Git?
+
 Ans: HEAD is a special pointer that tells Git which commit you are currently working on.
 
 Most of the time:
@@ -71,4 +75,7 @@ Most of the time:
 HEAD → branch → latest commit
 
 4.What happens to your files when you switch branches?
+
+
 Ans: When switching branches, Git updates the working directory to match the snapshot of the selected branch. Files may change, appear, or disappear based on the branch's commits.
+```
