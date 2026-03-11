@@ -37,13 +37,29 @@ You will:
 ### Task 3: Container Lifecycle
 Practice the full lifecycle on one container:
 1. **Create** a container (without starting it)
+
+Ans: docker create --name mlifecycle-demo -p 8080:80 nginx
 2. **Start** the container
+
+Ans: docker start lifecycle-demo
 3. **Pause** it and check status
+
+Ans: docker pause mycontainer
 4. **Unpause** it
+
+Ans: docker unpause mycontainer
 5. **Stop** it
+
+Ans: docker stop mycontainer
 6. **Restart** it
+
+Ans: docker stop mycontainer
 7. **Kill** it
+
+Ans: docker kill mycontainer
 8. **Remove** it
+
+Ans: docker rm mycontainer
 
 Check `docker ps -a` after each step — observe the state changes.
 
