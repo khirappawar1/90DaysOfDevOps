@@ -1,0 +1,33 @@
+services:
+   app:
+    build: .
+    container_name: nodeapp
+    ports:
+      - "3000:3000"
+    env_file:
+     .env
+    depends_on:
+     - mongo
+   
+    networks:
+      - my-net
+  
+   
+   mongo:
+    image: mongo:7 
+    container_name: mongo-container
+    volumes:
+      - mongo-db:/data/db
+    networks:
+      - my-net
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  mongo-db:
+networks:
+  my-net:
+
+
