@@ -21,6 +21,7 @@ Multi-stage builds are how real teams ship small, secure images. Docker Hub is h
 2. Create a Dockerfile that builds and runs it in a **single stage**
 3. Build the image and check its **size**
 
+Ans:Done
 Note down the size — you'll compare it later.
 
 ---
@@ -32,7 +33,6 @@ Note down the size — you'll compare it later.
 2. Build the image and check its size again
 3. Compare the two sizes
 
-Write in your notes: Why is the multi-stage image so much smaller?
 
 ---
 
@@ -42,6 +42,8 @@ Write in your notes: Why is the multi-stage image so much smaller?
 3. Tag your image properly: `yourusername/image-name:tag`
 4. Push it to Docker Hub
 5. Pull it on a different machine (or after removing locally) to verify
+
+
 
 ---
 

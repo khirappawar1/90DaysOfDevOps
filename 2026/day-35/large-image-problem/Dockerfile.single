@@ -1,0 +1,17 @@
+#Selecting the base image for application
+FROM node:18
+
+#Create working directory in contaier
+WORKDIR /app
+
+#copying dependience file into container
+COPY package.json /app
+
+#Install dependencies 
+RUN npm install 
+
+#Copy application code 
+COPY . . 
+EXPOSE  3000
+
+CMD [ "npm","start"]
