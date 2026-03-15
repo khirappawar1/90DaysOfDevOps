@@ -3,5 +3,8 @@ version: "3.9"
 services: 
      web: 
         image: nginx
+        container_name: mynginx
+        volumes:
+          - ~/docker-practice/data:/usr/share/nginx/html
         ports:
           - "9090:80"
