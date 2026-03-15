@@ -24,3 +24,28 @@ They should:
 - WordPress should connect to MySQL using the service name
 
 ![alt text](image.png)
+
+### Task 4: Compose Commands
+Practice and document these:
+1. Start services in **detached mode**
+
+Ans: docker compose up -d 
+2. View running services
+
+3. View **logs** of all services
+
+Ans: docker compose ps
+4. View logs of a **specific** service
+
+Ans: docker compose -f wordpress
+
+5. **Stop** services without removing
+
+Ans: docker compose down 
+6. **Remove** everything (containers, networks)
+
+Ans: docker compose down -v
+
+7. **Rebuild** images if you make a change
+
+Ans: docker compose up --build
