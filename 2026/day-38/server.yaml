@@ -1,0 +1,21 @@
+---
+server:
+  name: Local machine
+  ip: 172.30.32.1
+  port: 80
+database:
+  host: mysql
+  name: mysql-server
+  cerdentials:
+    user: omkar
+    password: password
+startup_scripts: |
+  apt update
+  apt install nginx
+  systemctl status nginx
+  systemctl start nginx
+description: >
+  This is description of the startup_scripts
+  It update the system
+  It installs the nginx
+  It start the nginx service
