@@ -53,10 +53,13 @@ Then extend the matrix to also include 2 operating systems — how many total jo
 2. Set `fail-fast: false` — trigger a failure in one job and observe what happens to the rest
 3. Write in your notes: What does `fail-fast: true` (the default) do vs `false`?
 
+Ans: fail-fast: true =	First failing matrix job stops all remaining jobs immediately.
+fail-fast: false =	Each matrix job runs independently; failures in one don’t stop others.
+
 https://github.com/khirappawar1/Github-actions-practice/blob/main/.github/workflows/matxi.yml
 
 
-
+![alt text](image-2.png)
 
 ## Hints
 - PR trigger: `on: pull_request: branches: [main]`
