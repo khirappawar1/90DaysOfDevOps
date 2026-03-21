@@ -41,6 +41,8 @@ Write in your notes: What is the full journey from `git push` to a running conta
 
 Ans: Able to push to dockerhub using the CICD and after that pulled from the Repo and started the container. 
 
+![alt text](image.png) - Project directory
+
 ## Hints
 - Docker login: `uses: docker/login-action@v3`
 - Build and push: `uses: docker/build-push-action@v5`
