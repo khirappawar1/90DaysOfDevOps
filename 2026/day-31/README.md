@@ -47,7 +47,7 @@ Build and run it. Understand what each line does.
 3. Write in your notes: When would you use CMD vs ENTRYPOINT?
 
 ---
-
+```bash
 ### Task 4: Build a Simple Web App Image
 1. Create a small static HTML file (`index.html`) with any content
 2. Write a Dockerfile that:
@@ -55,21 +55,76 @@ Build and run it. Understand what each line does.
    - Copies your `index.html` to the Nginx web directory
 3. Build and tag it `my-website:v1`
 4. Run it with port mapping and access it in your browser
-
+![alt text](image-2.png)
+```
 ---
-
+```bash
 ### Task 5: .dockerignore
 1. Create a `.dockerignore` file in one of your project folders
 2. Add entries for: `node_modules`, `.git`, `*.md`, `.env`
 3. Build the image — verify that ignored files are not included
-
+![alt text](image-1.png)
+```
 ---
-
+```bash
 ### Task 6: Build Optimization
 1. Build an image, then change one line and rebuild — notice how Docker uses **cache**
 2. Reorder your Dockerfile so that frequently changing lines come **last**
 3. Write in your notes: Why does layer order matter for build speed?
 
+Docker Build Optimization Notes
+1️⃣ Initial Dockerfile
+FROM node:18
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["node", "app.js"]
+2️⃣ Build Image
+docker build -t my-node-app:v1 .
+
+Docker builds layer by layer
+
+Layers that haven’t changed can reuse cache → faster builds
+
+3️⃣ Change One Line
+
+Edit app.js (change a log or text)
+
+docker build -t my-node-app:v1 .
+
+Docker rebuilds only the layers after the change
+
+Previous layers are “Using cache”
+
+4️⃣ Layer Order Optimization
+
+Frequently changing lines last (app code)
+
+Rarely changing lines first (dependencies, package.json)
+
+COPY package.json .
+RUN npm install
+COPY . .          # app code (changes often)
+
+✅ Benefit: npm install is cached, rebuilds faster
+
+5️⃣ Why Layer Order Matters
+
+Docker caches per layer
+
+Changing a layer invalidates all layers after it
+
+Proper order = faster incremental builds ⏱️
+
+6️⃣ Verify Cache Usage
+docker build -t my-node-app:v1 . --progress=plain
+
+Look for Using cache in build output
+
+
+```
 ---
 
 ## Hints
