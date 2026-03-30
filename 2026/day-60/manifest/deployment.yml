@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-app
+  namespace: capstone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wordpress
+
+  template:
+    metadata:
+      labels:
+        app: wordpress
+
+    spec:
+      containers:
+      - name: wordpress-app
+        image: wordpress:latest
+        ports:
+        - containerPort: 80
+
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: mysql:3306
+
+        - name: WORDPRESS_DB_NAME
+          value: wordpress
+
+        - name: WORDPRESS_DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_USER
+
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_PASSWORD
+        - name: WORDPRESS_DB_SSL
+          value: "false"
+
+        volumeMounts:
+        - name: wordpress-data
+          mountPath: /var/www/html
+
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 60
+          periodSeconds: 10
+      volumes:
+      - name: wordpress-data
+        emptyDir: {}
