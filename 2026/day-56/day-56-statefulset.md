@@ -130,12 +130,4 @@ Create `day-56-statefulsets.md` with:
 1. Add `day-56-statefulsets.md` to `2026/day-56/`
 2. Commit and push to your fork
 
----
 
-## Learn in Public
-Share on LinkedIn: "Learned Kubernetes StatefulSets today. Stable pod names, per-pod DNS, and persistent storage that survives deletion — now I understand why databases need StatefulSets."
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
-
-Happy Learning!
-**TrainWithShubham**

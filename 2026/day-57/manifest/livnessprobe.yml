@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-demo-pod
+spec:
+  containers:
+  - name: busybox-container
+    image: busybox
+    command:
+      - sh
+      - -c
+      - |
+        touch /tmp/healthy
+        echo "Container started, file created"
+        sleep 30
+        rm -f /tmp/healthy
+        echo "File deleted, liveness probe should fail now"
+        sleep 3600
+    livenessProbe:
+      exec:
+        command:
+          - cat
+          - /tmp/healthy
+      initialDelaySeconds: 5
+      periodSeconds: 5
+      failureThreshold: 3
