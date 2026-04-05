@@ -1,6 +1,8 @@
 # Day 11 Task: Error Handling in Shell Scripting
 
 ## Learning Objectives
+
+
 Understanding how to handle errors in shell scripts is crucial for creating robust and reliable scripts. Today, you'll learn how to use various techniques to handle errors effectively in your bash scripts.
 
 ## Topics to Cover
