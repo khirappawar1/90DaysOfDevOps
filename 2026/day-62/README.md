@@ -7,12 +7,14 @@ Understanding dependencies is what separates a Terraform beginner from someone w
 
 ---
 
+
 ## Expected Output
 - A VPC with subnet, internet gateway, route table, security group, and an EC2 instance -- all created via Terraform
 - A dependency graph visualized with `terraform graph`
 - A markdown file: `day-62-providers-resources.md`
 
 ---
+
 
 ## Challenge Tasks
 
