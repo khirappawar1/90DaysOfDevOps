@@ -46,6 +46,7 @@ aws configure
 # Enter your Access Key ID, Secret Access Key, default region (e.g., ap-south-1), output format (json)
 ```
 
+
 4. Verify AWS access:
 ```bash
 aws sts get-caller-identity
