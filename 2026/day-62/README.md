@@ -28,6 +28,20 @@ Understanding dependencies is what separates a Terraform beginner from someone w
 
 **Document:** What does `~> 5.0` mean? How is it different from `>= 5.0` and `= 5.0.0`?
 
+Ans: .terraform.lock.hcl
+Purpose:
+Locks exact provider versions
+Ensures consistent builds across teams & CI/CD
+Prevents unexpected upgrades
+
+Version Constraints Explained
+Constraint	Meaning
+~> 5.0	Install latest 5.x, but NOT 6.x
+>= 5.0	Any version 5.0 or higher (even 6.x → risky)
+= 5.0.0	Only exact version 5.0.0
+
+👉 Best Practice: Use ~> for stability + flexibility
+
 ---
 
 ### Task 2: Build a VPC from Scratch
