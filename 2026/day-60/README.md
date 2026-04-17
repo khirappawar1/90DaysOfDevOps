@@ -75,6 +75,9 @@ Ten days of Kubernetes — clusters, Pods, Deployments, Services, ConfigMaps, Se
 
 **Verify:** Does the HPA show correct min/max and target?
 
+
+
+
 ---
 
 ### Task 7: (Bonus) Compare with Helm (Day 59)
