@@ -14,39 +14,60 @@ Imagine you're managing a **Linux-based production server** and need to ensure t
 ### **1️⃣ User & Group Management**
 - Learn about Linux **users, groups, and permissions** (`/etc/passwd`, `/etc/group`).
 - **Task:**  
-  ``
+  
+  ```
   - Create a user `devops_user` and add them to a group `devops_team`.
+   
    -- sudo groupadd devops_team
       sudo useradd devops_user 
       sudo usermod -aG devops_team devops_user
+  
   - Set a password and grant **sudo** access.
+  
    -- sudo usermod -aG sudo devops_user
+  
   - Restrict SSH login for certain users in `/etc/ssh/sshd_config`.
+    
     sudo nano /etc/ssh/sshd_config
+    
     AllowUsers ubuntu devops_user
+    
     sudo sshd -t #validating teh syntax error
+    
     sudo groupadd sshusers
+   
     sudo usermod -aG sshusers devops_user
+    
     sudo usermod -aG sshusers ubuntu
+    
     AllowGroups sshusers  # configured in /ssh/sshd_config file
+    
     sudo systemctl restart ssh
+    
     grep -E "AllowUsers|AllowGroups|DenyUsers" /etc/ssh/sshd_config # chck the ssh settings
-``
+```
 
 ---
-
+```
 ### **2️⃣ File & Directory Permissions**
 - **Task:**  
   - Create `/devops_workspace` and a file `project_notes.txt`.
     mkdir devops_workspace
+    
     cd devops_workspace
+    
     touch project_notes.txt
+  
   - Set permissions:
+    
     - **Owner can edit**, **group can read**, **others have no access**.,
+    
     sudo chmod 640 devops_workspace
+  
   - Use `ls -l` to verify permissions.
+  
   ls -l
-
+```
 ---
 
 ### **3️⃣ Log File Analysis with AWK, Grep & Sed**
