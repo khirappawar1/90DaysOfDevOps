@@ -67,7 +67,6 @@ Imagine you're managing a **Linux-based production server** and need to ensure t
   - Use `ls -l` to verify permissions.
   
   ls -l
-```
 ---
 
 ### **3️⃣ Log File Analysis with AWK, Grep & Sed**
